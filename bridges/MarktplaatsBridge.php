@@ -45,7 +45,7 @@ class MarktplaatsBridge extends BridgeAbstract {
 			'i' => array(
 				'name' => 'includeImage',
 				'type' => 'checkbox',
-				'required' => true,
+				'required' => false,
 				'title' => 'Include the image at the end of the content',
 			),
 			'r' => array(
@@ -59,7 +59,7 @@ class MarktplaatsBridge extends BridgeAbstract {
 	const CACHE_TIMEOUT = 900;
 
 	public function collectData() {
-		$query = 'microscoop zeiss';
+		$query = '';
 		$excludeGlobal = false;
 		if(!is_null($this->getInput('z')) && !is_null($this->getInput('d'))) {
 			$query = '&postcode=' . $this->getInput('z') . '&distanceMeters=' . $this->getInput('d');
@@ -68,7 +68,7 @@ class MarktplaatsBridge extends BridgeAbstract {
 			$query .= '&PriceCentsFrom=' . $this->getInput('f');
 		}
 		if(!is_null($this->getInput('t'))) {
-			$query .= '&PriceCentsTo=80000' . $this->getInput('t');
+			$query .= '&PriceCentsTo=' . $this->getInput('t');
 		}
 		if(!is_null($this->getInput('s'))) {
 			if(!$this->getInput('s')) {
