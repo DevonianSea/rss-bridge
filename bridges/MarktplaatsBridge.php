@@ -75,7 +75,7 @@ class MarktplaatsBridge extends BridgeAbstract {
 				$excludeGlobal = true;
 			}
 		}
-		$url = 'https://www.marktplaats.nl/lrp/api/search?query=' . urlencode($this->getInput('q')) . $query;
+		$url = 'https://www.marktplaats.nl/lrp/api/search?query=' . urlencode($this->getInput('q')) . $query . '/#sortBy:SORT_INDEX|sortOrder:DECREASING';
 		$jsonString = getSimpleHTMLDOM($url, 900) or returnServerError('No contents received!');
 		$jsonObj = json_decode($jsonString);
 		foreach($jsonObj->listings as $listing) {
