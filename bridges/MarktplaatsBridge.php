@@ -10,7 +10,7 @@ class MarktplaatsBridge extends BridgeAbstract {
 				'name' => 'query',
 				'type' => 'text',
 				'required' => true,
-				'title' => 'Zoek microscoop',
+				'title' => 'The search string for marktplaats',
 			),
 			'z' => array(
 				'name' => 'zipcode',
@@ -59,7 +59,7 @@ class MarktplaatsBridge extends BridgeAbstract {
 	const CACHE_TIMEOUT = 900;
 
 	public function collectData() {
-		$query = 'microscoop';
+		$query = 'microscoop zeiss';
 		$excludeGlobal = false;
 		if(!is_null($this->getInput('z')) && !is_null($this->getInput('d'))) {
 			$query = '&postcode=' . $this->getInput('z') . '&distanceMeters=' . $this->getInput('d');
