@@ -1,6 +1,6 @@
 ?php
 
-class MarktplaatsBridge extends BridgeAbstract {
+class mpbridgeolympus extends BridgeAbstract {
 	const NAME = 'Marktplaats';
 	const URI = 'https://marktplaats.nl';
 	const DESCRIPTION = 'Read search queries from marktplaats.nl';
